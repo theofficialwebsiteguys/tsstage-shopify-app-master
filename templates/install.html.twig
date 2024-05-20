@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Times Square Stage Lighting{% endblock %}
+
+{% block body %}
+<main>
+    <section class="zero-state full-width">
+      <article>
+        <h1><strong>Times Square Stage Lighting</strong></h1>
+        <p>Products and Collections information manager.</p>
+        <div class="has-sections card" style="max-width: 400px;">
+          <div class="card-section row">
+            <form action="/">
+              <p>Install app into your store.</p>
+              <div class="input-group">
+                <input type="text" required placeholder="your-shopify-shop" name="shop" />
+                <span class="append">.myshopify.com</span>
+              </div>
+              <br/>
+              <button type="submit">Install Now</button>
+            </form>
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer>
+      <article class="help">
+        <span></span>
+        <p>Copyright {{ "now" | date( "Y" ) }} &copy; <a href="https://papertiger.com" target="_blank">Paper Tiger</a>.</p>
+      </article>
+    </footer>
+</main>
+{% endblock %}

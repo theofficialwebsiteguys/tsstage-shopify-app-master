@@ -1,0 +1,199 @@
+.icon-search--big {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.icon-search--big:after {
+    background-size: 100%;
+}
+
+#no-image svg,
+#no-image path {
+    fill: #d5dbe2;
+}
+
+.card-section > div img {
+    border: 1px solid rgba(195,207,216,0.3);
+}
+
+.row .columns.five.stretch + .columns.one.align-center {
+    height: 234px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+textarea {
+    overflow-y: scroll;
+}
+
+.modal__overlay {
+    z-index: 99;
+}
+
+.modal__overlay i[data-micromodal-close] {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.modal__overlay i[data-micromodal-close]:after {
+    background-size: 100%;
+}
+
+.modal__container .alert {
+    margin-bottom: 0 !important;
+}
+
+#modal-collection .modal__container {
+    min-width: 300px !important;
+    padding: 20px;
+}
+
+#modal-collection .modal__container p {
+    margin-bottom: 0 !important;
+}
+
+.product-list-container {
+    border: .1rem solid #c4cdd5;
+    border-radius: .3rem;
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: -5px;
+    margin-left: 0;
+    padding-top: 5px;
+    list-style-type: none;
+    overflow: scroll;
+}
+
+.product-list-container:empty:after {
+    content: 'Drag product to the right';
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    height: 50px;
+    transform: translate(-50%,-50%);
+    border: 3px dashed #c4cdd5;
+    padding-top: 6px;
+    border-radius: 3px;
+}
+
+.product-list-container-receiver {
+    border: .1rem solid #c4cdd5;
+    border-radius: .3rem;
+    width: 100%;
+    height: 232px;
+    box-sizing: border-box;
+    margin-left: 0;
+    list-style-type: none;
+    overflow: scroll;
+    position: relative;
+}
+
+.product-list-container-receiver:empty:after {
+    content: 'Drag product here';
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    height: 30px;
+    transform: translate(-50%,-50%);
+    border: 3px dashed #c4cdd5;
+    padding-top: 6px;
+    border-radius: 3px;
+}
+
+.product-list-container li,
+.product-list-container-receiver li {
+    padding: 10px;
+    border-bottom: .1rem solid #c4cdd5;
+    cursor: pointer;
+    transition: all ease .1s; 
+    display: flex;
+    align-items: center;
+}
+
+.product-list-container li span:last-child,
+.product-list-container-receiver li span:last-child {
+    margin-left: 10px;
+}
+
+.product-list-container li.loading-data,
+.product-list-container-receiver li.loading-data {
+    border: 0 !important;
+    cursor: initial;
+}
+
+.product-list-container li:last-child,
+.product-list-container-receiver li:last-child {
+    border-bottom: 0;
+}
+
+.product-list-container li:hover:not(.loading-data), 
+.product-list-container-receiver li:hover:not(.loading-data) {
+    background: #f4f5f7;
+}
+
+.cross_sell_search,
+.up_sell_search {
+    border-bottom: 0;
+    box-shadow: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.save-product-loading,
+.save-product-options-loading,
+.reset-product-options-loading {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.save-result-container,
+.save-product-options-result-container,
+.reset-product-options-result-container {
+    margin-top: 10px;
+}
+
+.fr-toolbar .fr-command.fr-btn, .fr-popup .fr-command.fr-btn, .fr-modal .fr-command.fr-btn {
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.fr-box.fr-basic.fr-top #logo {
+    display: none !important;
+}
+
+.ais-SearchBox-input {
+    padding-left: 3.0rem !important;
+}
+
+.note-btn {
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.note-btn:hover, .note-btn:focus, .note-btn.focus {
+    background: #ebebeb !important;
+}
+
+#algolia-card .highlight-warning {
+    max-width: 500px;
+    margin: 0 auto 20px;
+    padding: 10px;
+}

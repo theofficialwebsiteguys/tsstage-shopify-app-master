@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Times Square Stage Lighting{% endblock %}
+
+{% block body %}
+<script type="text/javascript">
+  var AppBridge = window['app-bridge'];
+  var createApp = AppBridge.createApp;
+
+  const apiKey = '{{ api_key }}';
+
+  const app = createApp({
+    apiKey: apiKey,
+    shopOrigin: '{{ shop }}'
+  });
+  window.current_shop = '{{ shop }}';
+</script>
+<main>
+    <section class="zero-state full-width">
+      <article>
+        <h1><strong>Times Square Stage Lighting</strong></h1>
+        <p>Products and Collections information manager.</p>
+        <div class="has-sections card">
+          <ul class="tabs">
+            <li>
+                <a href="#" data-target="#product-card">
+                    <span class="icon-product">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Products &nbsp;&nbsp;
+                </a>
+            </li>
+            <li>
+                <a href="#" data-target="#collection-card">
+                    <span class="icon-collection">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Collections &nbsp;&nbsp;
+                </a>
+            </li>
+            <li>
+                <a href="#" data-target="#product-oversized-card">
+                    <span class="icon-flag">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Oversized &nbsp;&nbsp;
+                </a>
+            </li>
+            <li>
+                <a href="#" data-target="#product-free-shipping-card">
+                    <span class="icon-flag">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Free Shipping &nbsp;&nbsp;
+                </a>
+            </li>
+            <li>
+                <a href="#" data-target="#product-free-ship-discount-card">
+                    <span class="icon-flag">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Eligible Free Shipping Orders Over $299 &nbsp;&nbsp;
+                </a>
+            </li>
+            <li>
+                <a href="#" data-target="#algolia-card">
+                    <span class="icon-refresh">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Algolia &nbsp;&nbsp;
+                </a>
+            </li>
+          </ul> <!-- .tabs -->
+          <div class="card-section">
+
+            <div id="product-card">
+                <div id="product-search-box"></div>
+                <br/>
+                <div id="product-hits"></div>
+                <div id="product-pagination"></div>
+            </div> <!-- #product-card -->
+
+            <div id="collection-card">
+                <div id="collection-search-box"></div>
+                <br/>
+                <div id="collection-hits"></div>
+                <div id="collection-pagination"></div>
+            </div> <!-- #collection-card -->
+
+            <div id="product-oversized-card">
+                <div id="oversized-search-box"></div>
+                <br/>
+                <div id="oversized-hits"></div>
+                <div id="oversized-pagination"></div>
+            </div> <!-- #product-oversized-card -->
+
+            <div id="product-free-shipping-card">
+                <div id="fs-search-box"></div>
+                <br/>
+                <div id="fs-hits"></div>
+                <div id="fs-pagination"></div>
+            </div> <!-- #product-free-shipping-card -->
+
+            <div id="product-free-ship-discount-card">
+                <div id="fsd-search-box"></div>
+                <br/>
+                <div id="fsd-hits"></div>
+                <div id="fsd-pagination"></div>
+            </div> <!-- #product-free-ship-discount-card -->
+
+            <div id="algolia-card">
+                <br/>
+                <h3 class="empty-search-results__title">Sync Algolia Index Settings</h3>
+                <a href="#" class="button sync-algolia-settings">Sync Now</a>
+                <br/><br/>
+            </div> <!-- #algolia-card -->
+
+          </div> <!-- .card-section -->
+        </div>
+      </article>
+    </section>
+    <footer>
+      <article class="help">
+        <span></span>
+        <p>Copyright {{ "now" | date( "Y" ) }} &copy; <a href="https://papertiger.com" target="_blank">Paper Tiger</a>.</p>
+      </article>
+    </footer>
+</main>
+
+<div class="modal micromodal-slide" id="modal-product" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <i class="icon-close" data-micromodal-close></i>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-product-title"></div>
+    </div>
+</div>
+
+<div class="modal micromodal-slide" id="modal-product-options" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <i class="icon-close" data-micromodal-close></i>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-product-options-title"></div>
+    </div>
+</div>
+
+<div class="modal micromodal-slide" id="modal-collection" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <i class="icon-close" data-micromodal-close></i>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-product-title"></div>
+    </div>
+</div>
+
+<div class="modal micromodal-slide" id="modal-algolia" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <i class="icon-close" data-micromodal-close></i>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-algola-title"></div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Times Square Stage Lighting{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('assets/css/uptown.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/micromodal.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/summernote-lite.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/algolia-min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+        {% block stylesheets %}{% endblock %}
+        <script src="https://unpkg.com/@shopify/app-bridge"></script>
+        <script>
+          var AppBridge = window['app-bridge'];
+          var actions = window['app-bridge'].actions;
+        </script>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {# <a href="/api/reset-token" class="button">Reset Token</a> #}
+        <script type="text/javascript" src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/micromodal.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/Sortable.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/summernote-lite.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/algoliasearchLite.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/instantsearch.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

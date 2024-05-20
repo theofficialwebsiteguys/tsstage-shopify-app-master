@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Times Square Stage Lighting{% endblock %}
+
+{% block body %}
+<script type="text/javascript">
+  var AppBridge = window['app-bridge'];
+  var createApp = AppBridge.createApp;
+  var actions = AppBridge.actions;
+  var Redirect = actions.Redirect;
+
+  const apiKey = '{{ api_key }}';
+  const redirectUri = '{{ redirect_url }}';
+  const permissionUrl = '/oauth/authorize?client_id=' + apiKey + '&scope={{ scopes }}&redirect_uri=' + redirectUri;
+
+  var shop = '{{ shop }}';
+  // Check if 'shop' already contains '.myshopify'
+  if (!shop.includes('.myshopify')) {
+    shop += '.myshopify.com';
+  }
+
+  // If the current window is the 'parent', change the URL by setting location.href
+  if (window.top == window.self) {
+    window.location.assign('https://' + shop + '/admin' + permissionUrl);
+
+  // If the current window is the 'child', change the parent's URL with Shopify App Bridge's Redirect action
+  } else {
+   const app = createApp({
+      apiKey: apiKey,
+      shopOrigin: shop
+    });
+
+    Redirect.create( app ).dispatch( Redirect.Action.ADMIN_PATH, permissionUrl );
+  }
+</script>
+{% endblock %}
